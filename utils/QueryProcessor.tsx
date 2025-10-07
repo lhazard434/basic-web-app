@@ -11,5 +11,15 @@ export default function QueryProcessor(query: string): string {
     return "lhazard434";
   }
 
+  if (query.toLowerCase().includes("largest")) {
+    const numbers = query.match(/-?\d+(\.\d+)?/g)?.map(Number);
+    if (numbers && numbers.length > 0) {
+      const max = Math.max(...numbers);
+      return `The largest number is ${max}.`;
+    } else {
+      return "I couldn't find any numbers to compare.";
+    }
+  }
+
   return "";
 }
