@@ -21,7 +21,7 @@ export default function QueryProcessor(query: string): string {
     }
   }
 
-  if (query.includes("sum")) {
+  if (query.includes("plus")) {
     const matches = query.match(/-?\d*\.?\d+/g);
     if (!matches) return "I couldn't find any numbers to add.";
     const nums = matches.map(Number);
